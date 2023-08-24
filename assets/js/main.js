@@ -24,7 +24,7 @@ Questo richiederá un minimo di ricerca per capire come usare il parametro e den
 
 // Chiedere a il nome e cogniome del viaggiatore.
 
-const userNameSurnameElement = document.getElementById('userNameSurname > input');
+const userNameSurnameElement = document.querySelector('.userNameSurname').ariaValueText();
 console.log(userNameSurnameElement);
 
 // Chiedere all'utente il numero di chilometri

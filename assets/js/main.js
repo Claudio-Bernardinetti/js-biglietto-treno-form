@@ -37,7 +37,7 @@ document.querySelector('.genera').addEventListener('click', ()=> {
 
     // Chiedere all'utente l'età del passeggero
 
-    let userAgeElement = document.querySelector('.userAge').value;
+    let userAgeElement = document.querySelector('.userAge').value; // = [Minorenne, Adulto, Over];
     console.log(userAgeElement);    
 
     // Calcolare il prezzo totale del viaggio, Il prezzo del biglietto è definito in base ai km (0.21 € al km)

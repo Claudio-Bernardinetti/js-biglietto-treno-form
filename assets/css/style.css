@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+h4 {
+    text-align: center;
+}
+
 .container {
     width: 60%;
     height: 300px;
@@ -14,13 +18,14 @@
 
 .row_top {
     background-color: aquamarine;
-    padding-bottom: 2rem;
+    padding: 1rem;
     margin-bottom: 2rem;
 }
 
 .inputs {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
 }
 
 .buttons {
@@ -28,9 +33,15 @@
     justify-content: center;
 }
 
+.genera {
+    margin-right: 0.5rem;
+}
+
+/* end row top */
+
 .row_bottom {
     background-color: aquamarine;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     justify-content: center;
 }

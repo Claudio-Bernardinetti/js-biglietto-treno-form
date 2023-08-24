@@ -22,6 +22,7 @@ Bonus (opzionale):
 Prova a racchiudere gli input ed il bottone in un tag form e prova a far funzionare il form evitando che la pagina si refreshi quando il form viene inviato cliccando su genera.
 Questo richiederá un minimo di ricerca per capire come usare il parametro e dentro la funzione anonima dell'event listener. function(e){ console.log(e) } */
 
+
 document.querySelector('.genera').addEventListener('click', ()=> {
 
     // Chiedere a il nome e cogniome del viaggiatore.
@@ -39,23 +40,20 @@ document.querySelector('.genera').addEventListener('click', ()=> {
     let userAgeElement = document.querySelector('.userAge').value;
     console.log(userAgeElement);    
 
-
     // Calcolare il prezzo totale del viaggio, Il prezzo del biglietto è definito in base ai km (0.21 € al km)
 
     const calcTicketPrice = userKmElement * 0.21;
 
-    // Sconto del 20% per i minorenni - Sconto del 40% per gli over 65
+    // Area Variabili 
 
     const col_name_element = document.querySelector('.col_name');
     const col_discount_element = document.querySelector('.col_discount');
     const col_carriage_element = document.querySelector('.col_carriage');
     const col_code_element = document.querySelector('.col_code');
     const col_price_element = document.querySelector('.col_price');
-
-
-
-    //const finalPriceElement = document.getElementById('finalPrice');
     let calcTicketDiscount;
+
+    // Sconto del 20% per i minorenni - Sconto del 40% per gli over 65
 
     if (userAgeElement < 18) {
         calcTicketDiscount = calcTicketPrice - calcTicketPrice * .20;
@@ -68,14 +66,11 @@ document.querySelector('.genera').addEventListener('click', ()=> {
         console.log(`Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`);
         col_discount_element.innerHTML = `Sconto over 65 del 40%`;
         col_price_element.innerHTML = `${calcTicketDiscount.toFixed(2)} €`;
-        //finalPriceElement.innerHTML = `Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`;
 
     } else {
         console.log(`Il costo del tuo biglietto e' di € ${calcTicketPrice.toFixed(2)}`);
         col_discount_element.innerHTML = `Biglietto Standard`;
         col_price_element.innerHTML = `${calcTicketPrice.toFixed(2)} €`;
-        
-        //finalPriceElement.innerHTML = `Il costo del tuo biglietto e' di € ${calcTicketPrice.toFixed(2)}`;
     }
 
 
@@ -88,15 +83,15 @@ document.querySelector('.genera').addEventListener('click', ()=> {
 
 })
 
+// Bottone annulla elimina tutte le voci dagli input.
+
 document.querySelector('.annulla').addEventListener('click', ()=> {
 
-    userNameSurnameElement = document.querySelector('.userNameSurname').value();
-    console.log(userNameSurnameElement);
+    userNameSurnameElement = document.querySelector('.userNameSurname').value = '';
 
-    userKmElement = document.querySelector('.userKm ').value;
-    console.log(userKmElement);
+    userKmElement = document.querySelector('.userKm ').value = '';
     
-    userAgeElement = document.querySelector('.userAge').value;
-    console.log(userAgeElement);    
+    userAgeElement = document.querySelector('.userAge').value = '';  
+     
 })
 

@@ -7,9 +7,36 @@
         <title>Biglitto treno form</title>
     </head>
     <body>
-        <input class="userNameSurname" type="text">
-        <div id="userKm"><input type="text"></div>
-        <div id="userAge"><button>21</button></div>
+        <div class="container">
+            <div class="row_top">
+                <div class="inputs">
+                    <div>
+                        <div>Nome Cogniome</div>
+                        <input class="userNameSurname" type="text">
+                    </div>
+                    <div>
+                        <div>Km da percorrere</div>
+                        <input class="userKm" type="text">
+                    </div>
+                    <div>
+                        <div>Fascia d'eta'</div>
+                        <input class="userAge" type="text">
+                    </div>
+
+                </div>
+                <div class="buttons">
+                    <button class="genera">Genera</button>
+                    <button class="annulla">Annulla</button>
+                </div>
+            </div>
+            <div class="row_bottom">
+                <div class="col_name">Nome Passegiero<span></span></div>
+                <div class="col_discunt">Offerta<span></span></div>
+                <div class="col_carriage">Carrozza<span></span></div>
+                <div class="col_code">Codice CP<span></span></div>
+                <div class="col_price">Costo Biglietto<span></span></div>
+            </div>
+        </div>
         <script rel="scriptsheet" src="./assets/js/main.js"></script>
     </body>
 </html>

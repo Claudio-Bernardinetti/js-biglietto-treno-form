@@ -4,6 +4,33 @@
     box-sizing: border-box;
 }
 
-h1 {
-    color: aqua;
+.container {
+    width: 60%;
+    height: 300px;
+    margin: 10% 20%;
+    padding: 2rem 2rem;
+    background-color: aqua;
+}
+
+.row_top {
+    background-color: aquamarine;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.row_bottom {
+    background-color: aquamarine;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
 }

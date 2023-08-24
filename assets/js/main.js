@@ -22,43 +22,64 @@ Bonus (opzionale):
 Prova a racchiudere gli input ed il bottone in un tag form e prova a far funzionare il form evitando che la pagina si refreshi quando il form viene inviato cliccando su genera.
 Questo richiederá un minimo di ricerca per capire come usare il parametro e dentro la funzione anonima dell'event listener. function(e){ console.log(e) } */
 
-// Chiedere a il nome e cogniome del viaggiatore.
+document.querySelector('.genera').addEventListener('click', ()=> {
 
-const userNameSurnameElement = document.querySelector('.userNameSurname').ariaValueText();
-console.log(userNameSurnameElement);
+    // Chiedere a il nome e cogniome del viaggiatore.
 
-// Chiedere all'utente il numero di chilometri
+    const userNameSurnameElement = document.querySelector('.userNameSurname').value;
+    console.log(userNameSurnameElement);
 
-const userKmElement = document.getElementById('userKm > input');
-console.log(userKmElement);            //Number(prompt('Quanti km vuoi percorrere?'));
+    // Chiedere all'utente il numero di chilometri
 
-// Chiedere all'utente l'età del passeggero
+    const userKmElement = document.querySelector('.userKm ').value;
+    console.log(userKmElement);            
 
-const userAgeElement = document.getElementById('userAge > button');    //Number(prompt('Quanti anni hai?'));
+    // Chiedere all'utente l'età del passeggero
+
+    let userAgeElement = document.querySelector('.userAge').value;
+    console.log(userAgeElement);    
 
 
+    // Calcolare il prezzo totale del viaggio, Il prezzo del biglietto è definito in base ai km (0.21 € al km)
 
-// Calcolare il prezzo totale del viaggio, Il prezzo del biglietto è definito in base ai km (0.21 € al km)
+    const calcTicketPrice = userKmElement * 0.21;
 
-const calcTicketPrice = userKmElement * 0.21;
+    // Sconto del 20% per i minorenni - Sconto del 40% per gli over 65
 
-// Sconto del 20% per i minorenni - Sconto del 40% per gli over 65
+    const col_name_element = document.querySelector('.col_name > span');
 
-//const finalPriceElement = document.getElementById('finalPrice');
-let calcTicketDiscount;
+    //const finalPriceElement = document.getElementById('finalPrice');
+    let calcTicketDiscount;
 
-if (userAge < 18) {
-    calcTicketDiscount = calcTicketPrice - calcTicketPrice * .20;
-    console.log(`Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`);
-    finalPriceElement.innerHTML = `Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`;
+    if (userAgeElement < 18) {
+        calcTicketDiscount = calcTicketPrice - calcTicketPrice * .20;
+        console.log(`Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`);
+        
 
-} else if(userAge > 65) {
-    calcTicketDiscount = calcTicketPrice - calcTicketPrice * .40;
-    console.log(`Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`);
-    finalPriceElement.innerHTML = `Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`;
+    } else if(userAgeElement > 65) {
+        calcTicketDiscount = calcTicketPrice - calcTicketPrice * .40;
+        console.log(`Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`);
+        finalPriceElement.innerHTML = `Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`;
 
-} else {
-    console.log(`Il costo del tuo biglietto e' di € ${calcTicketPrice.toFixed(2)}`);
-    //finalPriceElement.innerHTML = `Il costo del tuo biglietto e' di € ${calcTicketPrice.toFixed(2)}`;
-}
-//L'output del prezzo finale va stampato in forma umana (ovvero con massimo due decimali, per indicare i centesimi sul prezzo)
+    } else {
+        console.log(`Il costo del tuo biglietto e' di € ${calcTicketPrice.toFixed(2)}`);
+        //finalPriceElement.innerHTML = `Il costo del tuo biglietto e' di € ${calcTicketPrice.toFixed(2)}`;
+    }
+    //L'output del prezzo finale va stampato in forma umana (ovvero con massimo due decimali, per indicare i centesimi sul prezzo)
+    
+    col_name_element.innerHTML = `${userNameSurnameElement}`;
+
+})
+
+document.querySelector('.annulla').addEventListener('click', ()=> {
+
+    userNameSurnameElement = document.querySelector('.userNameSurname').value();
+    console.log(userNameSurnameElement);
+
+    userKmElement = document.querySelector('.userKm ').value;
+    console.log(userKmElement);
+    
+    userAgeElement = document.querySelector('.userAge').value;
+    console.log(userAgeElement);    
+})
+

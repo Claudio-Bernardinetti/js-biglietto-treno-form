@@ -46,7 +46,13 @@ document.querySelector('.genera').addEventListener('click', ()=> {
 
     // Sconto del 20% per i minorenni - Sconto del 40% per gli over 65
 
-    const col_name_element = document.querySelector('.col_name > span');
+    const col_name_element = document.querySelector('.col_name');
+    const col_discount_element = document.querySelector('.col_discount');
+    const col_carriage_element = document.querySelector('.col_carriage');
+    const col_code_element = document.querySelector('.col_code');
+    const col_price_element = document.querySelector('.col_price');
+
+
 
     //const finalPriceElement = document.getElementById('finalPrice');
     let calcTicketDiscount;
@@ -54,20 +60,31 @@ document.querySelector('.genera').addEventListener('click', ()=> {
     if (userAgeElement < 18) {
         calcTicketDiscount = calcTicketPrice - calcTicketPrice * .20;
         console.log(`Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`);
-        
+        col_discount_element.innerHTML = `Sconto under 18 del 20%`;
+        col_price_element.innerHTML = `${calcTicketDiscount.toFixed(2)} €`;
 
     } else if(userAgeElement > 65) {
         calcTicketDiscount = calcTicketPrice - calcTicketPrice * .40;
         console.log(`Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`);
-        finalPriceElement.innerHTML = `Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`;
+        col_discount_element.innerHTML = `Sconto over 65 del 40%`;
+        col_price_element.innerHTML = `${calcTicketDiscount.toFixed(2)} €`;
+        //finalPriceElement.innerHTML = `Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`;
 
     } else {
         console.log(`Il costo del tuo biglietto e' di € ${calcTicketPrice.toFixed(2)}`);
+        col_discount_element.innerHTML = `Biglietto Standard`;
+        col_price_element.innerHTML = `${calcTicketPrice.toFixed(2)} €`;
+        
         //finalPriceElement.innerHTML = `Il costo del tuo biglietto e' di € ${calcTicketPrice.toFixed(2)}`;
     }
+
+
     //L'output del prezzo finale va stampato in forma umana (ovvero con massimo due decimali, per indicare i centesimi sul prezzo)
     
     col_name_element.innerHTML = `${userNameSurnameElement}`;
+    col_carriage_element.innerHTML = `${Math.floor(Math.random() * 11)}`;
+    col_code_element.innerHTML = `${Math.floor(Math.random() * 10000)}`;
+    
 
 })
 

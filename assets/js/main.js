@@ -32,20 +32,15 @@ document.querySelector('.genera').addEventListener('click', ()=> {
 
     // Chiedere all'utente il numero di chilometri
 
-    const userKmElement = document.querySelector('.userKm ').value;
+    const userKmElement = document.querySelector('.userKm').value;
     console.log(userKmElement);            
-
-    // Chiedere all'utente l'età del passeggero
-
-    let userAgeElement = document.querySelector('.userAge').value; // = [Minorenne, Adulto, Over];
-    console.log(userAgeElement);    
 
     // Calcolare il prezzo totale del viaggio, Il prezzo del biglietto è definito in base ai km (0.21 € al km)
 
     const calcTicketPrice = userKmElement * 0.21;
-
+    
     // Area Variabili 
-
+    const userAge = document.querySelector('.userAge').value;
     const col_name_element = document.querySelector('.col_name');
     const col_discount_element = document.querySelector('.col_discount');
     const col_carriage_element = document.querySelector('.col_carriage');
@@ -53,15 +48,16 @@ document.querySelector('.genera').addEventListener('click', ()=> {
     const col_price_element = document.querySelector('.col_price');
     let calcTicketDiscount;
 
-    // Sconto del 20% per i minorenni - Sconto del 40% per gli over 65
+    // Chiedere all'utente l'età del passeggero.
+    // Sconto del 20% per i minorenni - Sconto del 40% per gli over 65.
 
-    if (userAgeElement < 18) {
+    if (userAge === 'minorenne') {
         calcTicketDiscount = calcTicketPrice - calcTicketPrice * .20;
         console.log(`Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`);
         col_discount_element.innerHTML = `Sconto under 18 del 20%`;
         col_price_element.innerHTML = `${calcTicketDiscount.toFixed(2)} €`;
 
-    } else if(userAgeElement > 65) {
+    } else if(userAge == 'over_65') {
         calcTicketDiscount = calcTicketPrice - calcTicketPrice * .40;
         console.log(`Il costo del tuo biglietto e' di € ${calcTicketDiscount.toFixed(2)}`);
         col_discount_element.innerHTML = `Sconto over 65 del 40%`;
@@ -74,24 +70,34 @@ document.querySelector('.genera').addEventListener('click', ()=> {
     }
 
 
-    //L'output del prezzo finale va stampato in forma umana (ovvero con massimo due decimali, per indicare i centesimi sul prezzo)
+    // L'output finali.
     
     col_name_element.innerHTML = `${userNameSurnameElement}`;
-    col_carriage_element.innerHTML = `${Math.floor(Math.random() * 11)}`;
-    col_code_element.innerHTML = `${Math.floor(Math.random() * 10000)}`;
+    col_carriage_element.innerHTML = `${Math.floor(Math.random() * 11) + 1}`;
+    col_code_element.innerHTML = `${Math.floor(Math.random() * 10000) + 1000}`;
     
 
 })
 
-// Bottone annulla elimina tutte le voci dagli input.
+// Bottone annulla elimina tutte le voci dagli input e innerText.
 
 document.querySelector('.annulla').addEventListener('click', ()=> {
 
     userNameSurnameElement = document.querySelector('.userNameSurname').value = '';
 
     userKmElement = document.querySelector('.userKm ').value = '';
-    
-    userAgeElement = document.querySelector('.userAge').value = '';  
+
+    userAge = document.querySelector('.userAge').value = 'adulto'; 
+
+    col_name_element = document.querySelector('.col_name').innerText = '';
+
+    col_discount_element = document.querySelector('.col_discount').innerText = '';
+
+    col_carriage_element = document.querySelector('.col_carriage').innerText = '';
+
+    col_code_element = document.querySelector('.col_code').innerText = '';
+
+    col_price_element = document.querySelector('.col_price').innerText = '';  
      
 })
 

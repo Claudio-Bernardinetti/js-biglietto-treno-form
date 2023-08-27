@@ -20,7 +20,6 @@ h4 {
 
 .container {
     width: 60%;
-    height: 310px;
     margin: 10% 20%;
     padding: 1rem 2rem;
     background-color: aqua;
@@ -39,6 +38,10 @@ h4 {
     padding-bottom: 0.5rem;
 }
 
+.userAge {
+    width: 150px;
+}
+
 .buttons {
     display: flex;
     justify-content: center;
@@ -50,10 +53,13 @@ h4 {
 
 /* end row top */
 
-.row_bottom {
+.container_bottom {
     background-color: rgb(78, 255, 47);
-    padding: 1rem;
     border-radius: 10px;
+    padding: 1rem;
+}
+
+.row_bottom {
     display: flex;
     justify-content: space-between;
     height: 100px;
@@ -61,4 +67,5 @@ h4 {
 
 .col_name_surname {
     background-color: rgb(162, 249, 62);
+    padding: 0rem 0.4rem;
 }

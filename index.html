@@ -13,54 +13,69 @@
                 <div class="inputs">
                     <div>
                         <h4>Nome Cogniome</h4>
-                        <input class="userNameSurname" type="text">
+                        <input class="userNameSurname" type="text"
+                            placeholder="Nome Cogniome">
                     </div>
                     <div>
                         <h4>Km da percorrere</h4>
-                        <input class="userKm" type="text">
+                        <input class="userKm" type="text"
+                            placeholder="Km da percorrere">
                     </div>
                     <div>
                         <h4>Fascia d'eta'</h4>
-
-                        <input class="userAge" type="text">
-                        <!-- <h5>Minorenne</h5>
-                            <h5>Adulto</h5>
-                            <h5>Over 65</h5> -->
-
+                        <!-- <input class="userAge" type="text"> -->
+                        <select name="topic" id="userAge" class="userAge">
+                            <option value="minorenne">Minorenne</option>
+                            <option value="adulto">Adulto</option>
+                            <option value="over_65">Over
+                                65</option>
+                        </select>
                     </div>
-
                 </div>
                 <!-- end inputs area -->
+
                 <div class="buttons">
                     <button class="genera">Genera</button>
                     <button class="annulla">Annulla</button>
                 </div>
                 <!-- end buttons area -->
+
             </div>
             <!-- end row top -->
+
             <h2>IL TUO BIGLIETTO</h2>
-            <div class="row_bottom">
-                <!-- <h3>DETTAGLI PASSEGGIERO</h3> -->
-                <div class="col_name_surname">
-                    <h4>Nome Passeggiero</h4>
-                    <div class="col_name"></div>
+            <div class="container_bottom">
+
+                <div class="col_name_header">
+                    <h5>DETTAGLI PASSEGGIERI</h5>
                 </div>
-                <div>
-                    <h4>Offerta</h4>
-                    <div class="col_discount"></div>
+
+                <hr>
+
+                <div class="row_bottom">
+                    <div class="col_name_surname">
+                        <h4>Nome Passeggiero</h4>
+                        <div class="col_name"></div>
+                    </div>
+                    <div>
+                        <h4>Offerta</h4>
+                        <div class="col_discount"></div>
+                    </div>
+                    <div>
+                        <h4>Carrozza</h4>
+                        <div class="col_carriage"></div>
+                    </div>
+                    <div>
+                        <h4>Codice CP</h4>
+                        <div class="col_code"></div>
+                    </div>
+                    <div>
+                        <h4>Costo Biglietto</h4>
+                        <div class="col_price"></div>
+                    </div>
                 </div>
-                <div>
-                    <h4>Carrozza</h4>
-                    <div class="col_carriage"></div>
-                </div>
-                <div>
-                    <h4>Codice CP</h4>
-                    <div class="col_code"></div>
-                </div>
-                <div>
-                    <h4>Costo Biglietto</h4>
-                    <div class="col_price"></div>
-                </div>
+                <hr>
+
             </div>
         </div>
         <!-- end row bottom -->
